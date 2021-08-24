@@ -10,6 +10,12 @@
 
 - HTML5, CSS3(Bootstrap 5) and JS-DOM
 
+## Getting started
+1. Clone the project
+2. Installing the packages
+3. On the cmd run `npm run build`
+4. Run `npm start`
+
 ### Prerequisites
 
 Basic knowledge of HTML Semantics CSS And JS-DOM to understand code.

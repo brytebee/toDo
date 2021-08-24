@@ -1,4 +1,5 @@
 import './styles.css';
+import { status } from './status.js'
 
 let listItem = [
   {
@@ -19,10 +20,10 @@ let listItem = [
 ];
 
 listItem = listItem.sort((a, b) => a.index - b.index);
-
+localStorage.setItem('list', JSON.stringify(listItem));
 const populate = () => {
   const page = document.getElementById('list');
-  listItem.forEach((element) => {
+  JSON.parse(localStorage.getItem('list')).forEach((element) => {
     const div = document.createElement('div');
     const checkbox = document.createElement('input');
     checkbox.setAttribute('type', 'checkbox', 'defaultChecked');
@@ -34,3 +35,5 @@ const populate = () => {
 };
 
 populate();
+
+status();

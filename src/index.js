@@ -1,5 +1,4 @@
 import './styles.css';
-// import { status } from './status.js'
 
 let listItem = [
   {
@@ -35,5 +34,3 @@ const populate = () => {
 };
 
 populate();
-
-status();

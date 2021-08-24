@@ -19,10 +19,10 @@ let listItem = [
 ];
 
 listItem = listItem.sort((a, b) => a.index - b.index);
-  
+
 const populate = () => {
   const page = document.getElementById('list');
-  listItem.forEach(element => {
+  listItem.forEach((element) => {
     const div = document.createElement('div');
     const checkbox = document.createElement('input');
     checkbox.setAttribute('type', 'checkbox', 'defaultChecked');

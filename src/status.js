@@ -6,11 +6,15 @@ export default function status() {
       if (e.checked) {
         list[i].completed = true;
         e.parentElement.style.textDecoration = 'line-through underline';
+        e.parentElement.classList.add('dim');
       } else {
         list[i].completed = false;
         e.parentElement.style.textDecoration = 'none';
+        e.parentElement.classList.remove('dim');
       }
+      list.sort((a, b) => a.completed - b.completed);
       localStorage.setItem('list', JSON.stringify(list));
+      location.reload();
     });
   });
 }

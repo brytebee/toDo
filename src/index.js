@@ -23,9 +23,10 @@ const add = () => {
 
 add();
 
+
 const display = () => {
-  const page = document.getElementById('list')
   const list = JSON.parse(localStorage.getItem('list'));
+  const page = document.getElementById('list')
   list.forEach((e) => {
     const div = document.createElement('div');
     const checkbox = document.createElement('input');
@@ -33,9 +34,10 @@ const display = () => {
     removeBtn.innerHTML = '<i class="fas fa-trash"></i>';
     removeBtn.id = e.id;
     if (e.completed) {
-      (div.style.textDecoration = 'underline line-through');
+      div.style.textDecoration = 'underline line-through';
+      div.classList.add('dim');
     } else {
-      (div.style.textDecoration = 'none');
+      div.style.textDecoration = 'none';
     }
     checkbox.setAttribute('type', 'checkbox');
     checkbox.name = 'checkbox';
@@ -49,6 +51,23 @@ const display = () => {
 }
 
 display();
+
+const completed = () => {
+  status();
+}
+completed();
+
+const clearAll = () => {
+  let list = JSON.parse(localStorage.getItem('list'));
+  document.getElementById('clearBtn').addEventListener('click', () =>{
+    list = list.filter((e) => !e.completed);
+    localStorage.setItem('list', JSON.stringify(list))
+    if (list !== null) {
+      location.reload();
+    }
+  })
+}
+clearAll();
 
 // listItem = listItem.sort((a, b) => a.index - b.index);
 

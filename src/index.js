@@ -25,7 +25,6 @@ const add = () => {
 
 add();
 
-
 display();
 
 const completed = () => {
@@ -33,9 +32,6 @@ const completed = () => {
 }
 completed();
 
-
 clearAll();
-
-
 
 removeItem();

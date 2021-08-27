@@ -8,11 +8,11 @@ export default function removeItem() {
       /* eslint-enable */
       if (doubleCheck) {
         e.parentElement.remove();
-        console.log(list);
-        console.log(e.id);
         list = list.filter((x) => (e.id !== x.id));
-        console.log(list);
         localStorage.setItem('list', JSON.stringify(list));
+        /* eslint-disable */
+        location.reload();
+        /* eslint-enable */
       }
     });
   });

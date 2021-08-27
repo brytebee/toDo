@@ -5,12 +5,12 @@ export default function status() {
     e.addEventListener('click', () => {
       if (e.checked) {
         list[i].completed = true;
-        e.parentElement.style.textDecoration = 'line-through underline';
+        // e.parentElement.style.textDecoration = 'line-through underline';
         e.parentElement.classList.add('dim');
         list.sort((a, b) => a.completed - b.completed);
       } else {
         list[i].completed = false;
-        e.parentElement.style.textDecoration = 'none';
+        // e.parentElement.style.textDecoration = 'none';
         e.parentElement.classList.remove('dim');
         list.sort((a, b) => a.index - b.index);
       }

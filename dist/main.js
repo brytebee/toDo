@@ -16,7 +16,7 @@
   \**************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \".card {\\r\\n  margin: 30px;\\r\\n}\\r\\n\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://todo/./src/styles.css?./node_modules/css-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \".card {\\r\\n  margin: 30px;\\r\\n}\\r\\n\\r\\n.dim {\\r\\n  color: rgb(47, 53, 48);\\r\\n  background-color: rgb(175, 168, 168);\\r\\n}\\r\\n\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://todo/./src/styles.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -100,13 +100,53 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, style) {\
 
 /***/ }),
 
+/***/ "./src/clearAll.js":
+/*!*************************!*\
+  !*** ./src/clearAll.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ clearAll)\n/* harmony export */ });\nfunction clearAll() {\r\n  let list = JSON.parse(localStorage.getItem('list'));\r\n  document.getElementById('clearBtn').addEventListener('click', () => {\r\n    /* eslint-disable */\r\n    const doubleCheck = confirm('Are you sure?');\r\n    /* eslint-enable */\r\n    if (doubleCheck) {\r\n      list = list.filter((e) => !e.completed);\r\n      localStorage.setItem('list', JSON.stringify(list));\r\n      if (list !== null) {\r\n        /* eslint-disable */\r\n        location.reload();\r\n        /* eslint-enable */\r\n      }\r\n    }\r\n  });\r\n}\n\n//# sourceURL=webpack://todo/./src/clearAll.js?");
+
+/***/ }),
+
+/***/ "./src/display.js":
+/*!************************!*\
+  !*** ./src/display.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst display = () => {\r\n  const list = JSON.parse(localStorage.getItem('list'));\r\n  const page = document.getElementById('list');\r\n  list.forEach((e) => {\r\n    const div = document.createElement('div');\r\n    const checkbox = document.createElement('input');\r\n    const removeBtn = document.createElement('a');\r\n    const editBtn = document.createElement('a');\r\n    const textHolder = document.createElement('span');\r\n    removeBtn.innerHTML = '<i class=\"fas fa-trash\"></i>';\r\n    editBtn.innerHTML = '<i class=\"fas fa-edit\"></i>';\r\n    editBtn.name = 'editbtn';\r\n    removeBtn.name = 'rmvbtn';\r\n    removeBtn.id = e.id;\r\n    editBtn.id = e.id;\r\n    if (e.completed) {\r\n      div.style.textDecoration = 'underline line-through';\r\n      div.classList.add('dim');\r\n    } else {\r\n      div.style.textDecoration = 'none';\r\n    }\r\n    checkbox.setAttribute('type', 'checkbox');\r\n    checkbox.name = 'checkbox';\r\n    checkbox.checked = e.completed;\r\n    textHolder.setAttribute('contentEditable', true);\r\n    textHolder.append(e.description);\r\n    div.append(checkbox, textHolder, editBtn, removeBtn);\r\n    div.classList.add('list-group-item');\r\n    page.append(div);\r\n  });\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (display);\n\n//# sourceURL=webpack://todo/./src/display.js?");
+
+/***/ }),
+
+/***/ "./src/editItem.js":
+/*!*************************!*\
+  !*** ./src/editItem.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ editItem)\n/* harmony export */ });\nfunction editItem() {\r\n  const editBtn = Object.values(document.getElementsByName('editbtn'));\r\n  editBtn.forEach((e) => {\r\n    e.addEventListener('click', () => {\r\n      const checkbox = document.createElement('input');\r\n      checkbox.setAttribute('type', 'checkbox');\r\n      checkbox.name = 'checkbox';\r\n      checkbox.checked = e.completed;\r\n    });\r\n  });\r\n}\n\n//# sourceURL=webpack://todo/./src/editItem.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n/* harmony import */ var _status_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./status.js */ \"./src/status.js\");\n\r\n\r\n\r\nlet listItem = [\r\n  {\r\n    completed: false,\r\n    description: 'Learn how to use proper ES6 syntax',\r\n    index: 8,\r\n  },\r\n  {\r\n    completed: false,\r\n    description: 'Use ES6 modules to write modular JavaScript',\r\n    index: 12,\r\n  },\r\n  {\r\n    completed: false,\r\n    description: 'Use webpack to bundle JavaScript',\r\n    index: 6,\r\n  },\r\n];\r\n\r\nlistItem = listItem.sort((a, b) => a.index - b.index);\r\n\r\nif (!localStorage.getItem('list')) {\r\n  localStorage.setItem('list', JSON.stringify(listItem));\r\n}\r\nconst populate = () => {\r\n  let storeList;\r\n  if (localStorage.getItem('list')) {\r\n    storeList = JSON.parse(localStorage.getItem('list'));\r\n  }\r\n  const page = document.getElementById('list');\r\n  storeList.forEach((element) => {\r\n    const div = document.createElement('div');\r\n    const checkbox = document.createElement('input');\r\n    if (element.completed) {\r\n      (div.style.textDecoration = 'underline line-through');\r\n    } else {\r\n      (div.style.textDecoration = 'none');\r\n    }\r\n    checkbox.setAttribute('type', 'checkbox');\r\n    checkbox.name = 'checkbox';\r\n    checkbox.checked = element.completed;\r\n    div.append(checkbox);\r\n    div.append(element.description);\r\n    div.classList.add('list-group-item');\r\n    page.append(div);\r\n  });\r\n};\r\n\r\npopulate();\r\n\r\n(0,_status_js__WEBPACK_IMPORTED_MODULE_1__.status)();\n\n//# sourceURL=webpack://todo/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n/* harmony import */ var _status_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./status.js */ \"./src/status.js\");\n/* harmony import */ var _display_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./display.js */ \"./src/display.js\");\n/* harmony import */ var _removeItem_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./removeItem.js */ \"./src/removeItem.js\");\n/* harmony import */ var _clearAll_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./clearAll.js */ \"./src/clearAll.js\");\n/* harmony import */ var _editItem_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editItem.js */ \"./src/editItem.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nlet listItem = [];\r\n\r\nclass List {\r\n  constructor(description, index) {\r\n    this.completed = false;\r\n    this.description = description;\r\n    this.index = listItem.length + 1;\r\n    this.id = `id${this.index}`;\r\n    index;\r\n  }\r\n}\r\n\r\nconst add = () => {\r\n  document.getElementById('addBtn').addEventListener('click', () => {\r\n    const newItem = new List(`${document.getElementById('input').value}`, listItem.length);\r\n    listItem.push(newItem);\r\n    localStorage.setItem('list', JSON.stringify(listItem));\r\n  });\r\n};\r\nadd();\r\n(0,_display_js__WEBPACK_IMPORTED_MODULE_2__.default)();\r\n\r\nconst completed = () => {\r\n  (0,_status_js__WEBPACK_IMPORTED_MODULE_1__.default)();\r\n};\r\n\r\ncompleted();\r\n(0,_clearAll_js__WEBPACK_IMPORTED_MODULE_4__.default)();\r\n(0,_removeItem_js__WEBPACK_IMPORTED_MODULE_3__.default)();\r\n(0,_editItem_js__WEBPACK_IMPORTED_MODULE_5__.default)();\n\n//# sourceURL=webpack://todo/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/removeItem.js":
+/*!***************************!*\
+  !*** ./src/removeItem.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ removeItem)\n/* harmony export */ });\nfunction removeItem() {\r\n  let list = JSON.parse(localStorage.getItem('list'));\r\n  const removeBtn = Object.values(document.getElementsByName('rmvbtn'));\r\n  removeBtn.forEach((e) => {\r\n    e.addEventListener('click', () => {\r\n      /* eslint-disable */\r\n      const doubleCheck = confirm('Are you sure?');\r\n      /* eslint-enable */\r\n      if (doubleCheck) {\r\n        e.parentElement.remove();\r\n        console.log(list);\r\n        console.log(e.id);\r\n        list = list.filter((x) => (e.id !== x.id));\r\n        console.log(list);\r\n        localStorage.setItem('list', JSON.stringify(list));\r\n      }\r\n    });\r\n  });\r\n}\n\n//# sourceURL=webpack://todo/./src/removeItem.js?");
 
 /***/ }),
 
@@ -116,7 +156,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"status\": () => (/* binding */ status)\n/* harmony export */ });\nconst status = () => {\r\n  const list = JSON.parse(localStorage.getItem('list'));\r\n  const checkbox = Object.values(document.getElementsByName('checkbox'));\r\n  checkbox.forEach((e, i) => {\r\n    e.addEventListener('click', () => {\r\n     if (e.checked) {\r\n       list[i].completed = true;\r\n       e.parentElement.style.textDecoration = 'line-through underline';\r\n     } else {\r\n      list[i].completed = false;\r\n      e.parentElement.style.textDecoration = 'none';\r\n     }\r\n     localStorage.setItem('list', JSON.stringify(list))\r\n    })\r\n  })\r\n};\n\n//# sourceURL=webpack://todo/./src/status.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ status)\n/* harmony export */ });\nfunction status() {\r\n  const list = JSON.parse(localStorage.getItem('list'));\r\n  const checkbox = Object.values(document.getElementsByName('checkbox'));\r\n  checkbox.forEach((e, i) => {\r\n    e.addEventListener('click', () => {\r\n      if (e.checked) {\r\n        list[i].completed = true;\r\n        e.parentElement.style.textDecoration = 'line-through underline';\r\n        e.parentElement.classList.add('dim');\r\n        list.sort((a, b) => a.completed - b.completed);\r\n      } else {\r\n        list[i].completed = false;\r\n        e.parentElement.style.textDecoration = 'none';\r\n        e.parentElement.classList.remove('dim');\r\n        list.sort((a, b) => a.index - b.index);\r\n      }\r\n      localStorage.setItem('list', JSON.stringify(list));\r\n      /* eslint-disable */\r\n      location.reload();\r\n      /* eslint-enable */\r\n    });\r\n  });\r\n}\n\n//# sourceURL=webpack://todo/./src/status.js?");
 
 /***/ })
 

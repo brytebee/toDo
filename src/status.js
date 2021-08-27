@@ -15,7 +15,9 @@ export default function status() {
         list.sort((a, b) => a.index - b.index);
       }
       localStorage.setItem('list', JSON.stringify(list));
+      /* eslint-disable */
       location.reload();
+      /* eslint-enable */
     });
   });
 }

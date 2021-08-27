@@ -13,7 +13,8 @@ class List {
     this.description = description;
     this.index = listItem.length + 1;
     this.id = `id${this.index}`;
-  };
+    index;
+  }
 }
 
 const add = () => {
@@ -21,14 +22,14 @@ const add = () => {
     const newItem = new List(`${document.getElementById('input').value}`, listItem.length);
     listItem.push(newItem);
     localStorage.setItem('list', JSON.stringify(listItem));
-});
-}
+  });
+};
 add();
 display();
 
 const completed = () => {
   status();
-}
+};
 
 completed();
 clearAll();

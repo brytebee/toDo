@@ -3,13 +3,17 @@ export default function removeItem() {
   const removeBtn = Object.values(document.getElementsByName('rmvbtn'));
   removeBtn.forEach((e) => {
     e.addEventListener('click', () => {
+      /* eslint-disable */
       const doubleCheck = confirm('Are you sure?');
+      /* eslint-enable */
       if (doubleCheck) {
         e.parentElement.remove();
-        list = list.filter((x) => !(e.id === x.id));
+        console.log(list);
+        console.log(e.id);
+        list = list.filter((x) => (e.id !== x.id));
+        console.log(list);
         localStorage.setItem('list', JSON.stringify(list));
-        location.reload(); 
       }
-      });
+    });
   });
 }

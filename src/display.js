@@ -1,6 +1,6 @@
 const display = () => {
-  let list = JSON.parse(localStorage.getItem('list'));
-  const page = document.getElementById('list')
+  const list = JSON.parse(localStorage.getItem('list'));
+  const page = document.getElementById('list');
   list.forEach((e) => {
     const div = document.createElement('div');
     const checkbox = document.createElement('input');
@@ -11,6 +11,8 @@ const display = () => {
     editBtn.innerHTML = '<i class="fas fa-edit"></i>';
     editBtn.name = 'editbtn';
     removeBtn.name = 'rmvbtn';
+    removeBtn.id = e.id;
+    editBtn.id = e.id;
     if (e.completed) {
       div.style.textDecoration = 'underline line-through';
       div.classList.add('dim');
@@ -21,11 +23,11 @@ const display = () => {
     checkbox.name = 'checkbox';
     checkbox.checked = e.completed;
     textHolder.setAttribute('contentEditable', true);
-    textHolder.append(e.description)
+    textHolder.append(e.description);
     div.append(checkbox, textHolder, editBtn, removeBtn);
     div.classList.add('list-group-item');
     page.append(div);
   });
-}
+};
 
-export default  display;
+export default display;

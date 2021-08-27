@@ -7,12 +7,13 @@ export default function status() {
         list[i].completed = true;
         e.parentElement.style.textDecoration = 'line-through underline';
         e.parentElement.classList.add('dim');
+        list.sort((a, b) => a.completed - b.completed);
       } else {
         list[i].completed = false;
         e.parentElement.style.textDecoration = 'none';
         e.parentElement.classList.remove('dim');
+        list.sort((a, b) => a.index - b.index);
       }
-      list.sort((a, b) => a.completed - b.completed);
       localStorage.setItem('list', JSON.stringify(list));
       location.reload();
     });

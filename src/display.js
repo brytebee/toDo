@@ -5,8 +5,11 @@ const display = () => {
     const div = document.createElement('div');
     const checkbox = document.createElement('input');
     const removeBtn = document.createElement('a');
+    const editBtn = document.createElement('a');
+    const textHolder = document.createElement('span');
     removeBtn.innerHTML = '<i class="fas fa-trash"></i>';
-    removeBtn.id = e.id;
+    editBtn.innerHTML = '<i class="fas fa-edit"></i>';
+    editBtn.name = 'editbtn';
     removeBtn.name = 'rmvbtn';
     if (e.completed) {
       div.style.textDecoration = 'underline line-through';
@@ -17,9 +20,9 @@ const display = () => {
     checkbox.setAttribute('type', 'checkbox');
     checkbox.name = 'checkbox';
     checkbox.checked = e.completed;
-    div.append(checkbox);
-    div.append(e.description);
-    div.append(removeBtn);
+    textHolder.setAttribute('contentEditable', true);
+    textHolder.append(e.description)
+    div.append(checkbox, textHolder, editBtn, removeBtn);
     div.classList.add('list-group-item');
     page.append(div);
   });

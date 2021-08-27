@@ -7,7 +7,8 @@ export default function removeItem() {
       if (doubleCheck) {
         e.parentElement.remove();
         list = list.filter((x) => !(e.id === x.id));
-        localStorage.setItem('list', JSON.stringify(list)); 
+        localStorage.setItem('list', JSON.stringify(list));
+        location.reload(); 
       }
       });
   });

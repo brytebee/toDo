@@ -9,7 +9,6 @@ const display = () => {
       const removeBtn = document.createElement('a');
       const textHolder = document.createElement('input');
       textHolder.className = 'input';
-      
       removeBtn.innerHTML = '<i class="fas fa-trash"></i>';
       removeBtn.name = 'rmvbtn';
       removeBtn.id = e.id;
@@ -23,15 +22,14 @@ const display = () => {
       checkbox.name = 'checkbox';
       checkbox.className = 'checkbox';
       checkbox.checked = e.completed;
-      textHolder.setAttribute('contentEditable', true);
       textHolder.value = e.description;
       div.append(checkbox, textHolder, removeBtn);
       div.classList.add('list-group-item');
       page.append(div);
       textHolder.addEventListener('keyup', () => {
         e.description = textHolder.value;
-        localStorage.setItem('list', JSON.stringify(list))
-      })
+        localStorage.setItem('list', JSON.stringify(list));
+      });
     });
   }
 };

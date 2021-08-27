@@ -3,7 +3,6 @@ import status from './status.js';
 import display from './display.js';
 import removeItem from './removeItem.js';
 import clearAll from './clearAll.js';
-import editItem from './editItem.js';
 
 let listItem = [];
 
@@ -36,4 +35,3 @@ const completed = () => {
 completed();
 clearAll();
 removeItem();
-editItem();

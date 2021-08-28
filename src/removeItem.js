@@ -1,19 +1,12 @@
-export default function removeItem() {
-  let list = JSON.parse(localStorage.getItem('list'));
-  const removeBtn = Object.values(document.getElementsByName('rmvbtn'));
-  removeBtn.forEach((e) => {
-    e.addEventListener('click', () => {
-      /* eslint-disable */
-      const doubleCheck = confirm('Are you sure?');
-      /* eslint-enable */
-      if (doubleCheck) {
-        e.parentElement.remove();
-        list = list.filter((x) => (e.id !== x.id));
-        localStorage.setItem('list', JSON.stringify(list));
-        /* eslint-disable */
-        location.reload();
-        /* eslint-enable */
-      }
-    });
-  });
-}
+import display from "./display";
+import indexUpdate from "./indexUpdate";
+import getFromStorage, { saveInStorage } from "./storage";
+
+const removeItem = (list, task) => {
+  list = list.filter((eachTask) => eachTask.index !== task.index);
+  list = indexUpdate(list);
+  saveInStorage(list);
+  display(getFromStorage());
+};
+
+export default removeItem;

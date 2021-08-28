@@ -1,10 +1,12 @@
-let listItem = [];
+import display from "./display";
+import indexUpdate from "./indexUpdate";
+import getFromStorage, { saveInStorage } from "./storage";
 
 class List {
   constructor(description) {
     this.completed = false;
     this.description = description;
-    this.index = listItem.length + 1;
+    this.index = list.length + 1;
     this.id = `id${this.index}`;
   }
 }
@@ -12,11 +14,12 @@ class List {
 export default function add() {
   if (document.getElementById('input').value !== '') {
     const newItem = new List(`${document.getElementById('input').value}`);
-    if (localStorage.list) {
-      listItem = JSON.parse(localStorage.getItem('list'));
-    }
-    listItem.push(newItem);
-    localStorage.setItem('list', JSON.stringify(listItem));
+   let list = getFromStorage();
+   list.push(newItem);
+   saveInStorage(list);
+   list = getFromStorage();
+   list = indexUpdate(list);
+   display(list);
     document.getElementById('input').value = '';
   }
 };

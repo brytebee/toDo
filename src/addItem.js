@@ -9,7 +9,7 @@ class List {
     this.index = list.length + 1;
     this.id = `id${this.index}`;
   }
-}
+};
 
 export default function add() {
   if (document.getElementById('input').value !== '') {

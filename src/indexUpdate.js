@@ -1,4 +1,4 @@
-import getFromStorage, { saveInStorage } from "./storage";
+import { saveInStorage } from "./storage";
 
 const indexUpdate = (list) => {
   let counter = 1;

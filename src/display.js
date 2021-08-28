@@ -1,16 +1,8 @@
 import editItem from './editItem.js';
-import indexUpdate from './indexUpdate.js';
 import removeItem from './removeItem.js';
-import getFromStorage from './storage.js';
 import status from './status.js';
 
 const display = (list) => {
-  // console.log('from display', list);
-  // const newList = getFromStorage(list);
-  // list = newList;
-  // indexUpdate(list);
-  // const newL = getFromStorage(list);
-  // list = newL;
   const page = document.getElementById('list');
   page.innerHTML = '';
   if (list) {
@@ -44,6 +36,5 @@ const display = (list) => {
     });
   }
 };
-// display(list);
 
 export default display;

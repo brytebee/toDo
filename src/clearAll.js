@@ -1,6 +1,6 @@
-export default function clearAll() {
-  let list = JSON.parse(localStorage.getItem('list'));
-  document.getElementById('clearBtn').addEventListener('click', () => {
+export default function clearAll(element) {
+  if (JSON.parse(localStorage.getItem('list'))) {let list = JSON.parse(localStorage.getItem('list'));
+  element.addEventListener('click', () => {
     /* eslint-disable */
     const doubleCheck = confirm('Are you sure?');
     /* eslint-enable */
@@ -13,5 +13,5 @@ export default function clearAll() {
         /* eslint-enable */
       }
     }
-  });
+  });}
 }

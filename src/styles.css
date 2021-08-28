@@ -1,5 +1,6 @@
 .card {
-  margin: 30px;
+  margin: 5% 30%;
+  /* padding: 2%; */
 }
 
 .dim {
@@ -9,4 +10,8 @@
 
 .checkbox:checked + .input {
   text-decoration: line-through underline;
+}
+
+body {
+  background-color: rgba(236, 230, 218, 0.383);
 }

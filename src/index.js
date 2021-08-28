@@ -17,21 +17,28 @@ class List {
 
 const add = () => {
   document.getElementById('addBtn').addEventListener('click', () => {
-    const newItem = new List(`${document.getElementById('input').value}`);
-    if (localStorage.list) {
-      listItem = JSON.parse(localStorage.getItem('list'));
+    if (document.getElementById('input').value !== '') {
+      const newItem = new List(`${document.getElementById('input').value}`);
+      if (localStorage.list) {
+        listItem = JSON.parse(localStorage.getItem('list'));
+      }
+      listItem.push(newItem);
+      localStorage.setItem('list', JSON.stringify(listItem));
+      document.getElementById('input').value = '';
     }
-    listItem.push(newItem);
-    localStorage.setItem('list', JSON.stringify(listItem));
     display();
   });
 };
 add();
 
-const completed = () => {
-  status();
-};
 
-completed();
-clearAll();
-removeItem();
+// window.addEventListener('DOMContentLoaded', () => {
+//   console.log('DOM fully loaded and parsed');
+  const completed = () => {
+    status();
+  };
+  
+  completed();
+  clearAll(document.getElementById('clearBtn'));
+  removeItem();
+// });

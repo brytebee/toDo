@@ -8,6 +8,7 @@ const display = (list) => {
   if (list) {
     list.forEach((task) => {
       const div = document.createElement('div');
+      div.className = 'task';
       const checkbox = document.createElement('input');
       checkbox.addEventListener('click', () => status(task, checkbox, list));
       const removeBtn = document.createElement('a');
@@ -19,7 +20,7 @@ const display = (list) => {
       removeBtn.name = 'rmvbtn';
       removeBtn.id = task.id;
       if (task.completed) {
-        div.style.textDecoration = 'underline line-through';
+        div.style.textDecoration = 'line-through';
         div.classList.add('dim');
       } else {
         div.style.textDecoration = 'none';
@@ -29,7 +30,10 @@ const display = (list) => {
       checkbox.className = 'checkbox';
       checkbox.checked = task.completed;
       textHolder.value = task.description;
-      div.append(checkbox, textHolder, removeBtn);
+      const checkInputDiv = document.createElement('div');
+      checkInputDiv.className = 'check-input-div';
+      checkInputDiv.append(checkbox, textHolder);
+      div.append(checkInputDiv, removeBtn);
       div.classList.add('list-group-item');
       page.append(div);
       textHolder.addEventListener('keyup', () => editItem(list, task, textHolder));

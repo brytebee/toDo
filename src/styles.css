@@ -1,17 +1,30 @@
-.card {
-  margin: 5% 10%;
-  /* padding: 2%; */
+body {
+  background-color: rgba(236, 230, 218, 0.383);
 }
 
-.dim {
-  color: rgb(47, 53, 48);
-  background-color: rgb(175, 168, 168);
+.card {
+  margin: 5% 10%;
+}
+
+.input,
+.input:focus {
+  border: none;
+  outline: none;
+}
+
+.checkbox {
+  margin-right: 10px;
 }
 
 .checkbox:checked + .input {
-  text-decoration: line-through underline;
+  text-decoration: line-through;
 }
 
-body {
-  background-color: rgba(236, 230, 218, 0.383);
+.fa-trash {
+  margin-left: 10px;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
 }

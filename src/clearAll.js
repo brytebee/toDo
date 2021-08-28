@@ -7,4 +7,4 @@ export default function clearAll(list) {
   saveInStorage(list);
   list = indexUpdate(getFromStorage());
   display(list);
-};
+}

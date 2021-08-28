@@ -6,6 +6,6 @@ const addByEnter = (event, add) => {
     add();
     display(getFromStorage());
   }
-}
+};
 
 export default addByEnter;

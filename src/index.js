@@ -3,8 +3,8 @@ import display from './display.js';
 import clearAll from './clearAll.js';
 import add from './addItem.js';
 import indexUpdate from './indexUpdate.js';
-import addByEnter from './addByEnter';
-import getFromStorage, { saveInStorage } from './storage';
+import addByEnter from './addByEnter.js';
+import getFromStorage, { saveInStorage } from './storage.js';
 
 document.getElementById('addBtn').addEventListener('click', () => {
   add();
@@ -15,7 +15,7 @@ document.getElementById('addBtn').addEventListener('click', () => {
 });
 
 document.getElementById('clearBtn').addEventListener('click', () => {
- const list = getFromStorage();
+  const list = getFromStorage();
   clearAll(list);
 });
 

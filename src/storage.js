@@ -1,8 +1,8 @@
 const getFromStorage = () => {
- if(localStorage.getItem('list') !== null) {
-   return JSON.parse(localStorage.getItem('list'));
- }
- return [];
+  if (localStorage.getItem('list') !== null) {
+    return JSON.parse(localStorage.getItem('list'));
+  }
+  return [];
 };
 
 const saveInStorage = (list) => {

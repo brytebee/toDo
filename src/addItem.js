@@ -1,6 +1,6 @@
-import display from "./display";
-import indexUpdate from "./indexUpdate";
-import getFromStorage, { saveInStorage } from "./storage";
+import display from './display.js';
+import indexUpdate from './indexUpdate.js';
+import getFromStorage, { saveInStorage } from './storage.js';
 
 class List {
   constructor(description, list) {

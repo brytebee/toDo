@@ -1,8 +1,7 @@
-import display from "./display";
-import indexUpdate from "./indexUpdate";
-import getFromStorage, { saveInStorage } from "./storage";
+import indexUpdate from './indexUpdate.js';
+import getFromStorage, { saveInStorage } from './storage.js';
 
-const removeItem = (list, task) => {
+const removeItem = (list, task, display) => {
   list = list.filter((eachTask) => eachTask.index !== task.index);
   list = indexUpdate(list);
   saveInStorage(list);

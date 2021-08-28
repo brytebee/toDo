@@ -10,9 +10,9 @@ const display = (list) => {
       const div = document.createElement('div');
       div.className = 'task';
       const checkbox = document.createElement('input');
-      checkbox.addEventListener('click', () => status(task, checkbox, list));
+      checkbox.addEventListener('click', () => status(task, list));
       const removeBtn = document.createElement('a');
-      removeBtn.addEventListener('click', () => removeItem(list, task));
+      removeBtn.addEventListener('click', () => removeItem(list, task, display));
       const textHolder = document.createElement('input');
       textHolder.className = 'input';
       removeBtn.innerHTML = '<i class="fas fa-trash"></i>';

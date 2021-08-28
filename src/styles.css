@@ -20,6 +20,12 @@ body {
   text-decoration: line-through;
 }
 
+.check-input-div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 .fa-trash {
   margin-left: 10px;
 }
@@ -27,4 +33,9 @@ body {
 .task {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.input {
+  margin: 0;
 }

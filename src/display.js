@@ -13,7 +13,8 @@ const display = (list) => {
       checkbox.addEventListener('click', () => status(task, list));
       const removeBtn = document.createElement('a');
       removeBtn.addEventListener('click', () => removeItem(list, task, display));
-      const textHolder = document.createElement('input');
+      const textHolder = document.createElement('p');
+      textHolder.setAttribute('contentEditable', true);
       textHolder.className = 'input';
       removeBtn.innerHTML = '<i class="fas fa-trash"></i>';
       removeBtn.className = 'rmvbtn';
@@ -29,7 +30,7 @@ const display = (list) => {
       checkbox.name = 'checkbox';
       checkbox.className = 'checkbox';
       checkbox.checked = task.completed;
-      textHolder.value = task.description;
+      textHolder.textContent = task.description;
       const checkInputDiv = document.createElement('div');
       checkInputDiv.className = 'check-input-div';
       checkInputDiv.append(checkbox, textHolder);

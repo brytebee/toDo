@@ -6,7 +6,12 @@ body {
   margin: 5% 10%;
 }
 
-.input,
+.input {
+  border: none;
+  outline: none;
+  margin: 0;
+}
+
 .input:focus {
   border: none;
   outline: none;
@@ -34,8 +39,4 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.input {
-  margin: 0;
 }

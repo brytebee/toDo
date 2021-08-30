@@ -1,53 +1,26 @@
 import './styles.css';
-import status from './status.js';
+import display from './display.js';
+import clearAll from './clearAll.js';
+import add from './addItem.js';
+import indexUpdate from './indexUpdate.js';
+import addByEnter from './addByEnter.js';
+import getFromStorage, { saveInStorage } from './storage.js';
 
-let listItem = [
-  {
-    completed: false,
-    description: 'Learn how to use proper ES6 syntax',
-    index: 8,
-  },
-  {
-    completed: false,
-    description: 'Use ES6 modules to write modular JavaScript',
-    index: 12,
-  },
-  {
-    completed: false,
-    description: 'Use webpack to bundle JavaScript',
-    index: 6,
-  },
-];
+document.getElementById('addBtn').addEventListener('click', () => {
+  add();
+  const list = getFromStorage();
+  indexUpdate(list);
+  saveInStorage(list);
+  display(list);
+});
 
-listItem = listItem.sort((a, b) => a.index - b.index);
+document.getElementById('clearBtn').addEventListener('click', () => {
+  const list = getFromStorage();
+  clearAll(list);
+});
 
-if (!localStorage.getItem('list')) {
-  localStorage.setItem('list', JSON.stringify(listItem));
-}
-const populate = () => {
-  let storeList;
-  if (localStorage.getItem('list')) {
-    storeList = JSON.parse(localStorage.getItem('list'));
-  }
-  const page = document.getElementById('list');
-  storeList.forEach((element) => {
-    const div = document.createElement('div');
-    const checkbox = document.createElement('input');
-    if (element.completed) {
-      (div.style.textDecoration = 'underline line-through');
-    } else {
-      (div.style.textDecoration = 'none');
-    }
-    checkbox.setAttribute('type', 'checkbox');
-    checkbox.name = 'checkbox';
-    checkbox.checked = element.completed;
-    div.append(checkbox);
-    div.append(element.description);
-    div.classList.add('list-group-item');
-    page.append(div);
-  });
-};
+document.querySelector('.form-control').addEventListener('keypress', (event) => addByEnter(event, add));
 
-populate();
+const list = indexUpdate(getFromStorage());
 
-status();
+display(list);

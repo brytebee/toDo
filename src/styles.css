@@ -1,3 +1,42 @@
+body {
+  background-color: rgba(236, 230, 218, 0.383);
+}
+
 .card {
-  margin: 30px;
+  margin: 5% 10%;
+}
+
+.input {
+  border: none;
+  outline: none;
+  margin: 0;
+}
+
+.input:focus {
+  border: none;
+  outline: none;
+}
+
+.checkbox {
+  margin-right: 10px;
+}
+
+.checkbox:checked + .input {
+  text-decoration: line-through;
+}
+
+.check-input-div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.fa-trash {
+  margin-left: 10px;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

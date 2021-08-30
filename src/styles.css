@@ -2,8 +2,19 @@ body {
   background-color: rgba(236, 230, 218, 0.383);
 }
 
+.header {
+  margin-top: 5%;
+  font-size: 2em;
+}
+
+.fa-check-square {
+  color: blue;
+}
+
 .card {
-  margin: 5% 10%;
+  margin: 2% 30%;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all 0.55s ease-in-out;
 }
 
 .input {
@@ -39,4 +50,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .card-mobile {
+    margin: 2% 0 7%;
+  }
+
+  .header-mobile {
+    margin-top: 10%;
+    font-size: 1.4em;
+  }
 }

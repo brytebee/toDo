@@ -53,11 +53,11 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-  .card-mobile {
+  .card {
     margin: 2% 0 7%;
   }
 
-  .header-mobile {
+  .header {
     margin-top: 10%;
     font-size: 1.4em;
   }

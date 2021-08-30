@@ -1,9 +1,14 @@
 body {
   background-color: rgba(236, 230, 218, 0.383);
 }
+
 .header {
   margin-top: 5%;
   font-size: 2em;
+}
+
+.fa-check-square {
+  color: blue;
 }
 
 .card {
@@ -48,4 +53,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    margin: 2% 5%;
+  }
+
+  .header {
+    margin-top: 5%;
+    font-size: 1.4em;
+  }
 }

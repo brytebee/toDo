@@ -8,13 +8,13 @@ const removeItem = () => {
     <div id='list' class='card-body'></div>
   </div>
   `;
-  const input = document.getElementById("input");
-  input.value = "one";
-  const contentHolder = document.createElement("div");
+  const input = document.getElementById('input');
+  input.value = 'one';
+  const contentHolder = document.createElement('div');
   contentHolder.textContent = input.value;
-  const page = document.getElementById("list").appendChild(contentHolder);
+  const page = document.getElementById('list').appendChild(contentHolder);
   page.remove(contentHolder);
-  const wrapperChildren = Array.from(document.querySelectorAll("#list div"));
+  const wrapperChildren = Array.from(document.querySelectorAll('#list div'));
   return wrapperChildren;
 };
 

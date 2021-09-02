@@ -14,8 +14,8 @@ const indexUpdate = (list) => {
       this.completed = false;
       this.description = description;
       this.index = list.length + 1;
-    };
-  };
+    }
+  }
 
   const input = new Item('one', list);
   list.push(input.index);

@@ -1,4 +1,4 @@
-import getFromStorage, { saveInStorage } from './storage.js';
+import { saveInStorage } from './storage.js';
 
 const editItem = (list, task, textHolder) => {
   task.description = textHolder.textContent;

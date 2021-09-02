@@ -12,6 +12,7 @@ class List {
 }
 
 export default function add() {
+  console.log(document.getElementById('input'));
   if (document.getElementById('input').value !== '') {
     let list = getFromStorage();
     const newItem = new List(`${document.getElementById('input').value}`, list);

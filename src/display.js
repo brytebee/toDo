@@ -14,7 +14,7 @@ const display = (list) => {
       const removeBtn = document.createElement('a');
       removeBtn.addEventListener('click', () => removeItem(list, task, display));
       const textHolder = document.createElement('p');
-      textHolder.setAttribute('contentEditable', true);
+      textHolder.setAttribute('contenteditable', true);
       textHolder.className = 'input';
       removeBtn.innerHTML = '<i class="fas fa-trash"></i>';
       removeBtn.className = 'rmvbtn';

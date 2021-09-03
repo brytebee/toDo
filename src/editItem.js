@@ -1,7 +1,7 @@
 import { saveInStorage } from './storage.js';
 
 const editItem = (list, task, textHolder) => {
-  task.description = textHolder.value;
+  task.description = textHolder.textContent;
   saveInStorage(list);
 };
 

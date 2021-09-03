@@ -6,6 +6,8 @@
 ## Screenshot
 ![image](https://user-images.githubusercontent.com/27709832/131328615-c1d396fa-cf55-414b-bf5a-d9f814dece7a.png)
 
+[live-demo](https://brytebee.github.io/toDo/dist/)
+
 ## Built With
 
 - HTML5, CSS3(Bootstrap 5) and JS-DOM

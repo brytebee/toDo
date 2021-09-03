@@ -7,3 +7,4 @@ describe('Clear all completed function', () => {
     expect(clearAll().length).toBe(1);
   });
 });
+

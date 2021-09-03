@@ -3,7 +3,7 @@ import StorageMock from '../__mocks__/storage';
 describe('Storage test', () => {
   const storage = new StorageMock();
   storage.setItem('list', []);
-  const data = []
+  const data = [];
   
   test('Add one item into storage', () => {
     const task1 = { completed: false, description: 'Complete milestone 1 & 2 by 10am', index: 1};

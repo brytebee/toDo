@@ -15,7 +15,7 @@ export default function add() {
   if (document.getElementById('input').value !== '') {
     let list = getFromStorage();
     const newItem = new List(`${document.getElementById('input').value}`, list);
-    list.push(newItem);
+    list.unshift(newItem);
     saveInStorage(list);
     list = getFromStorage();
     list = indexUpdate(list);

@@ -29,20 +29,20 @@ const display = (list) => {
       checkbox.addEventListener('click', () => status(task, list));
       removeBtn.addEventListener('click', () => removeItem(list, task, display));
       textHolder.addEventListener('keyup', () => editItem(list, task, textHolder));
-      
+
       if (task.completed) {
         div.style.textDecoration = 'line-through';
         div.classList.add('dim');
       } else {
         div.style.textDecoration = 'none';
       }
-      
+
       checkbox.checked = task.completed;
       textHolder.textContent = task.description;
-      
+
       checkbox.setAttribute('type', 'checkbox');
       checkInputDiv.append(checkbox, textHolder);
-      
+
       div.append(checkInputDiv, removeBtn);
       div.classList.add('list-group-item');
       page.append(div);

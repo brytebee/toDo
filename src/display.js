@@ -25,7 +25,7 @@ const display = (list) => {
 
       textHolder.setAttribute('contenteditable', true);
       removeBtn.innerHTML = '<i class="fas fa-trash"></i>';
-      
+
       checkbox.addEventListener('click', () => status(task, list));
       removeBtn.addEventListener('click', () => removeItem(list, task, display));
       textHolder.addEventListener('keyup', () => editItem(list, task, textHolder));

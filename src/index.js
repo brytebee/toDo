@@ -5,6 +5,7 @@ import add from './addItem.js';
 import indexUpdate from './indexUpdate.js';
 import addByEnter from './addByEnter.js';
 import getFromStorage, { saveInStorage } from './storage.js';
+import uncheckAll from './uncheckAll';
 
 document.getElementById('addBtn').addEventListener('click', () => {
   add();
@@ -17,6 +18,11 @@ document.getElementById('addBtn').addEventListener('click', () => {
 document.getElementById('clearBtn').addEventListener('click', () => {
   const list = getFromStorage();
   clearAll(list);
+});
+
+document.getElementById('uncheckBtn').addEventListener('click', () => {
+  const list = getFromStorage();
+  uncheckAll(list);
 });
 
 document.querySelector('.form-control').addEventListener('keypress', (event) => addByEnter(event, add));

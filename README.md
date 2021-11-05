@@ -1,7 +1,7 @@
 # To Do list
 ## Description
 
-> In this project, you will build a simple HTML list of To Do tasks. The list will be styled according to the specifications listed later in this lesson. This simple web page will be built using webpack and served by a webpack dev server.
+In this project, I built a simple list of To-Do tasks. This simple web page is engineered using Webpack and served by a Webpack dev server. I also used JavaScript DOM manipulation, HTML5, Bootstrap and CSS3.
 
 ## Screenshot
 ![image](https://user-images.githubusercontent.com/27709832/131328615-c1d396fa-cf55-414b-bf5a-d9f814dece7a.png)
